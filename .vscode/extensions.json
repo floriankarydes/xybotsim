@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"golang.go",
+		"aaron-bond.better-comments",
+		"streetsidesoftware.code-spell-checker",
+		"mhutchie.git-graph",
+		"yzhang.markdown-all-in-one",
+		"bierner.markdown-emoji",
+		"christian-kohler.path-intellisense"
+	]
+}
