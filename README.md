@@ -25,7 +25,7 @@ To run your simulations using XY Bot Simulator you will need Go version 1.14 or 
 Using the standard Go tools you can install XY Bot Simulator's core library using:
 
 ```bash
-go get github.com/floriankarydes/xybotsim
+go get github.com/floriankarydes/xybotsim/pkg/xybotsim
 ```
 
 ## Getting Started
