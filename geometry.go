@@ -5,21 +5,25 @@ import (
 	"math"
 )
 
-type Direction uint8
+type direction uint8
 
+// Cardinal directions.
 const (
-	North Direction = iota + 1
+	North direction = iota + 1
 	East
 	South
 	West
 )
 
+// Cell on 2D grid.
 type cell struct {
 	x uint
 	y uint
 }
 
-func (c *cell) getAdjacent(d Direction) (cell, error) {
+// Get next cell along a given direction.
+// In case of overflow/underflow, return same cell.
+func (c *cell) getAdjacent(d direction) (cell, error) {
 	switch d {
 	case North:
 		if c.y == 0 {

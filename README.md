@@ -25,7 +25,7 @@ To run your simulations using XY Bot Simulator you will need Go version 1.14 or 
 Using the standard Go tools you can install XY Bot Simulator's core library using:
 
 ```bash
-go get github.com/floriankarydes/xybotsim/pkg/xybotsim
+go get github.com/floriankarydes/xybotsim
 ```
 
 ## Getting Started
@@ -36,13 +36,19 @@ Open a new file `my_simulation.go` and you're ready to setup your first simulati
 package main
 
 import (
-  "github.com/floriankarydes/xybotsim/pkg/xybotsim"
+  "github.com/floriankarydes/xybotsim"
 )
 
 func main() {
+
+  // Create a new simulator with a 10x10 world grid.
   simulator := xybotsim.NewSimulator(10)
+
+  // Spawn a new robot in simulator world on cell (5,5).
+  // Set robot velocity to 1 cell per second
   robot, _ := simulator.AddRobot("robot", 5, 5, 1)
 
+  // Command the robot in a 1x1 square pattern (async)
   go func() {
     for i := 0; i < 4*3; i++ {
       switch i % 4 {
@@ -58,6 +64,7 @@ func main() {
     }
   }()
 
+  // Display the simulated world on screen
   simulator.Show()
 }
 ```
@@ -71,6 +78,8 @@ go run my_simulation.go
 It should look like this:
 
 <img src="https://j.gifs.com/RlJn8q.gif" alt="First simulation preview" width="400" height="420">
+
+The black square is a robot and the cells marked as occupied are greyed out. When moving from one cell to another, a robot occupy both cell for the duration of the movement.
 
 ## Going further
 
