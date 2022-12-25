@@ -70,7 +70,7 @@ go run my_simulation.go
 
 It should look like this:
 
-![Demo XY Robot Simulator](https://gifs.com/gif/xy-robot-simulator-RlJn8q)
+<img src="https://j.gifs.com/RlJn8q.gif" alt="First simulation preview" width="400" height="420">
 
 ## Going further
 
