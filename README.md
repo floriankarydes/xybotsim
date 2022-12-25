@@ -83,4 +83,4 @@ The black square is a robot and the cells marked as occupied are greyed out. Whe
 
 ## Going further
 
-Please checkout the [examples](examples) available to learn how to run more complex simulation scenarios.
+Please checkout the [examples](examples) available to learn how to run more complex simulation scenarios. Full documentation is available on [pkg.go.dev](https://pkg.go.dev/github.com/floriankarydes/xybotsim).
