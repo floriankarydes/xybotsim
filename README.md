@@ -6,18 +6,18 @@ Run extremely simple simulations of ["turtlebot"](https://www.turtlebot.com) sty
 
 ## Features
 
-- 🤖 Test robot controllers written in [Go](https://go.dev) with software-in-the-loop simulations.
-- 💯 Run large scale multi-agent scenarios with hundreds of robots.
-- 💥 Simulate robot collisions with obstacles and other robots.
-- 📘 Connect your code easily with the most simple [API](#getting-started).
-- 📺 Visualize simulations in real-time with a minimal GUI.
+- 🤖 Test robot controllers written in [Go](https://go.dev).
+- 💯 Run hundreds of robots simultaneously.
+- 💥 Simulate robot collisions.
+- 📘 Connect your code with just a few lines.
+- 📺 Visualize simulations in real-time.
 
 But don't get your hopes too high, this will be dots moving on a grid 😅 If you are looking for a proper robotics simulator, you should checkout [Gazebo](https://gazebosim.org/home).
 
 XY Bot Simulator's design is actually very minimalist :
 
 - Simulated world is a 2D squared grid.
-- Robot moves from cell to cell with a chosen velocity.
+- Robots move from cell to cell with a chosen velocity.
 - Movement is discrete & limited to adjacent cells (no diagonal).
 
 ## Prerequisites
