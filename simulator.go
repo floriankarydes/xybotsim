@@ -77,34 +77,6 @@ type Simulator struct {
 	robotMutex    sync.RWMutex      // Ensure thread-safe access to the robots' register.
 }
 
-// Set cell status to occupied if free, send error if not.
-func (s *Simulator) occupyCell(c cell) error {
-	s.worldMutex.Lock()
-	defer s.worldMutex.Unlock()
-	if c.x >= s.worldSize || c.y >= s.worldSize {
-		return errors.New("out of world")
-	}
-	if s.worldGrid[c.x][c.y] {
-		return errors.New("already occupied")
-	}
-	s.worldGrid[c.x][c.y] = true
-	return nil
-}
-
-// Set cell status to free if occupied, send error if not.
-func (s *Simulator) freeCell(c cell) error {
-	s.worldMutex.Lock()
-	defer s.worldMutex.Unlock()
-	if c.x > s.worldSize || c.y > s.worldSize {
-		return errors.New("out of world")
-	}
-	if !s.worldGrid[c.x][c.y] {
-		return errors.New("not occupied")
-	}
-	s.worldGrid[c.x][c.y] = false
-	return nil
-}
-
 // Start robot simulation thread.
 // Handle incoming command, move robot according to velocity & check for collisions.
 // When colliding, the "moving" robot wheel slides on ground and robot stay at same position.
@@ -155,4 +127,32 @@ func (s *Simulator) startRobot(r *Robot) {
 // Stop robot simulation thread.
 func (s *Simulator) stopRobot(r *Robot) {
 	r.stopSignal <- true
+}
+
+// Set cell status to occupied if free, send error if not.
+func (s *Simulator) occupyCell(c cell) error {
+	s.worldMutex.Lock()
+	defer s.worldMutex.Unlock()
+	if c.x >= s.worldSize || c.y >= s.worldSize {
+		return errors.New("out of world")
+	}
+	if s.worldGrid[c.x][c.y] {
+		return errors.New("already occupied")
+	}
+	s.worldGrid[c.x][c.y] = true
+	return nil
+}
+
+// Set cell status to free if occupied, send error if not.
+func (s *Simulator) freeCell(c cell) error {
+	s.worldMutex.Lock()
+	defer s.worldMutex.Unlock()
+	if c.x > s.worldSize || c.y > s.worldSize {
+		return errors.New("out of world")
+	}
+	if !s.worldGrid[c.x][c.y] {
+		return errors.New("not occupied")
+	}
+	s.worldGrid[c.x][c.y] = false
+	return nil
 }

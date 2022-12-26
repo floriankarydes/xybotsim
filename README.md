@@ -1,6 +1,8 @@
 # XY Bot Simulator
 
-Extremely simple simulation of a set of ["turtlebot"](https://www.turtlebot.com) style robots.
+[![Platform Tests](https://github.com/floriankarydes/xybotsim/actions/workflows/platform_tests.yml/badge.svg?branch=main)](https://github.com/floriankarydes/xybotsim/actions/workflows/platform_tests.yml) [![GitHub tag (Latest by date)](https://img.shields.io/github/v/tag/floriankarydes/xybotsim)](https://github.com/floriankarydes/xybotsim/releases) ![GitHub all releases](https://img.shields.io/github/downloads/floriankarydes/xybotsim/total)
+
+Run extremely simple simulations of ["turtlebot"](https://www.turtlebot.com) style robots.
 
 ## Features
 
@@ -20,7 +22,7 @@ XY Bot Simulator's design is actually very minimalist :
 
 ## Prerequisites
 
-To run your simulations using XY Bot Simulator you will need Go version 1.14 or later, a C compiler and your system's development tools.
+To run your simulations using XY Bot Simulator you will need Go version 1.17 or later, a C compiler and your system's development tools. Although XY Bot Simulator is virtually supported on any platforms with Go and a C compiler, it has been fully tested **only with macOS 13 on Apple Silicon**.
 
 Using the standard Go tools you can install XY Bot Simulator's core library using:
 

@@ -1,6 +1,11 @@
 {
+	"markdownlint.config": {
+		"default": true,
+		"MD033": { "allowed_elements": ["img"] },
+	},
 	"cSpell.words": [
 		"floriankarydes",
+		"turtlebot",
 		"xybotsim"
 	]
 }
