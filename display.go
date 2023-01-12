@@ -29,6 +29,7 @@ func (s *Simulator) Show() {
 	worldCanvas.ScaleMode = canvas.ImageScalePixels
 	window.SetContent(worldCanvas)
 
+	//TODO Do not redraw every pixel on every frame, move graphics object around.
 	go func() {
 		tick := time.NewTicker(time.Second / 6)
 		for range tick.C {

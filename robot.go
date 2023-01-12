@@ -20,6 +20,7 @@ func (r *Robot) EnqueueCommand(d direction) error {
 	if len(r.commandQueue) == cap(r.commandQueue) {
 		return errors.New("queue is full")
 	}
+	//TODO Create custom (un-buffered) queue with thread-safe flushing.
 	r.commandQueue <- d
 	return nil
 }
